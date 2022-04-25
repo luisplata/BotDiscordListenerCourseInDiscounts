@@ -23,7 +23,7 @@ app.use(express.json({ verify: VerifyDiscordRequest(process.env.PUBLIC_KEY) }));
 // Store for in-progress games. In production, you'd want to use a DB
 const activeGames = {};
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.send('Hello World!!');
 });
 /**
  * Interactions endpoint URL where Discord will send HTTP requests
@@ -175,7 +175,7 @@ app.post('/interactions', async function (req, res) {
   }
 });
 
-app.listen(3000, () => {
+app.listen(80, () => {
   console.log('Listening on port 3000');
   // Check if guild commands from commands.json are installed (if not, install them)
   HasGuildCommands(process.env.APP_ID, process.env.GUILD_ID, [
